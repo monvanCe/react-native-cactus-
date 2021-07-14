@@ -1,22 +1,27 @@
 import React from 'react'
-import {Text, View} from 'react-native'
-
-const Login = () => 
- 
-  (
-    <View>
-      <Text> sea lan dayiii </Text>
-    </View>
-  )
+import {Platform, StyleSheet, Text, View} from 'react-native'
 
 
   const Register = () => 
  
   (
-    <View style={{flex: 1,backgroundColor: 'white'}}>
+    <View style={styles.container}>
     
-      <Text> ase lan dayiii </Text>
+      <Text style={styles.textContainer}> ase lan dayiii </Text>
     </View>
   )
+
+const styles = StyleSheet.create({
+  container:{
+    flex: 1,
+    backgroundColor: 'white',
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  textContainer:{
+    fontSize : 48,
+    color: 'black'
+  }
+})
 
 export default Register
