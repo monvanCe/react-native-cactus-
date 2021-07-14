@@ -10,11 +10,11 @@ const Login = () =>
   )
 
 
-
   const Register = () => 
  
   (
-    <View>
+    <View style={{flex: 1,backgroundColor: 'white'}}>
+    
       <Text> ase lan dayiii </Text>
     </View>
   )
