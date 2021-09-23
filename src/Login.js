@@ -3,20 +3,20 @@ import {Platform, StyleSheet, Text, View, TouchableOpacity, Button} from 'react-
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import tab1 from './Tab1'
+import bottomtabbartextstyle from './bottomtabbartextstyle';
 
-function tab2({navigation}) {
+function tab1() {
+    return (
+      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+        <Text>Ana sayfa</Text>
+      </View>
+    );
+  }
+
+function tab2() {
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Kategoriler</Text>
-      <Button
-        style={{fontSize: 20, color: 'green'}}
-        styleDisabled={{color: 'red'}}
-        onPress={() => navigation.navigate("Sepetim")}
-        title="Press Me"
-        >
-        Press Me
-      </Button>
+      <Text>Sepetim</Text>
     </View>
   );
 }
@@ -24,7 +24,7 @@ function tab2({navigation}) {
 function tab3() {
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Sepetim</Text>
+      <Text style= {{fontWeight: 'bold', color: 'red'}}>Sepetim</Text>
     </View>
   );
 }
@@ -60,11 +60,16 @@ const stack = createNativeStackNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <Tab.Navigator>
-        <Tab.Screen name="Ana Sayfa" component={tab1} options={{headerShown:false}}/>
-        <Tab.Screen name="Listelerim" component={tab4} />
-        <Tab.Screen name="Hesabım" component={tab5} />
-        <Tab.Screen name="homestack" component={homestack} />
+      <Tab.Navigator
+            screenOptions={{
+              tabBarStyle: { position: 'absolute', height: 60, },
+            }}
+      >
+        <stack.Screen name="Ana Sayfa" component={tab1} options={{headerShown:false}}/>
+        <stack.Screen name="Kategoriler" component={tab2} />
+        <stack.Screen name="Sepetim" component={tab3} />
+        <stack.Screen name="Listelerim" component={tab4} />
+        <stack.Screen name="Hesabım" component={tab5} />
       </Tab.Navigator>
     </NavigationContainer>
   );
