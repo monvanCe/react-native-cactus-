@@ -4,45 +4,11 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-function tab1() {
-    return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>Ana sayfaa</Text>
-      </View>
-    );
-  }
-
-function tab2() {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Sepetim</Text>
-    </View>
-  );
-}
-
-function tab3() {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text style= {{fontWeight: 'bold', color: 'red'}}>Sepetim</Text>
-    </View>
-  );
-}
-
-function tab4() {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Sepetim</Text>
-    </View>
-  );
-}
-
-function tab5() {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Sepetim</Text>
-    </View>
-  );
-}
+import {tab1} from './Tabs/Tab1'
+import {tab2} from './Tabs/Tab2'
+import {tab3} from './Tabs/Tab3'
+import {tab4} from './Tabs/Tab4'
+import {tab5} from './Tabs/Tab5'
 
 function homestack(){
   return( 
@@ -66,7 +32,11 @@ export default function App() {
               tabBarInactiveTintColor: '#000',
             }}
       >
-        <stack.Screen name="Ana Sayfa" component={tab1} options={{headerShown:false}} />
+        <stack.Screen name="Ana Sayfa" component={tab1} 
+              options={{
+                headerShown:false,
+                }} 
+         />
         <stack.Screen name="Kategoriler" component={tab2} />
         <stack.Screen name="Sepetim" component={tab3} />
         <stack.Screen name="Listelerim" component={tab4} />
