@@ -3,6 +3,7 @@ import {Platform, StyleSheet, Text, View, TouchableOpacity, Button} from 'react-
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import {tab1} from './Tabs/Tab1'
 import {tab2} from './Tabs/Tab2'
@@ -31,11 +32,14 @@ export default function App() {
               tabBarActiveTintColor: '#000',
               tabBarInactiveTintColor: '#000',
             }}
-      >
+       >
         <stack.Screen name="Ana Sayfa" component={tab1} 
               options={{
                 headerShown:false,
-                }} 
+                tabBarIcon: ({ color, size }) => (
+                  <MaterialCommunityIcons name="home" color={color.red} size={10} />
+                ), 
+              }}
          />
         <stack.Screen name="Kategoriler" component={tab2} />
         <stack.Screen name="Sepetim" component={tab3} />
@@ -45,5 +49,3 @@ export default function App() {
     </NavigationContainer>
   );
 }
-
-

@@ -7,7 +7,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 export function tab3() {
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text style= {{fontWeight: 'bold', color: 'red'}}>Sepetim</Text>
+        <Text /* style= {{fontWeight: 'bold', color: 'red'}} */>Sepetim</Text>
       </View>
     );
   }

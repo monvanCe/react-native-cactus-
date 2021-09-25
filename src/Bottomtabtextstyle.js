@@ -6,10 +6,3 @@ import { StyleSheet } from "react-native";
       fontSize: 80,
     },
   });
-
-  export const styles2 = StyleSheet.create({
-    bottomText: {
-      color: 'red',
-      fontSize: 80,
-    },
-  });
