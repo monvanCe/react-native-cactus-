@@ -37,7 +37,7 @@ export default function App() {
               options={{
                 headerShown:false,
                 tabBarIcon: ({ color, size }) => (
-                  <MaterialCommunityIcons name="home" color={color.red} size={10} />
+                  <MaterialCommunityIcons name="home" color={color.red} size={30} />
                 ), 
               }}
          />
