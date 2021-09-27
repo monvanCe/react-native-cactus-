@@ -36,15 +36,59 @@ export default function App() {
         <stack.Screen name="Ana Sayfa" component={tab1} 
               options={{
                 headerShown:false,
-                tabBarIcon: ({ color, size }) => (
-                  <MaterialCommunityIcons name="home" color={color.red} size={30} />
-                ), 
+                tabBarIcon: ({ tintColor, focused }) => (
+                  <MaterialCommunityIcons
+                    name={focused ? "home-circle" : "home-circle-outline"}
+                    color={tintColor}
+                    size={30}
+                  />
+                )              
               }}
          />
-        <stack.Screen name="Kategoriler" component={tab2} />
-        <stack.Screen name="Sepetim" component={tab3} />
-        <stack.Screen name="Listelerim" component={tab4} />
-        <stack.Screen name="Hesabım" component={tab5} />
+        <stack.Screen name="Kategoriler" component={tab2} 
+              options={{
+                tabBarIcon: ({ tintColor, focused }) => (
+                  <MaterialCommunityIcons
+                    name={focused ? "ballot" : "ballot-outline"}
+                    color={tintColor}
+                    size={30}
+                  />
+                )
+              }} 
+        />
+        <stack.Screen name="Sepetim" component={tab3} 
+              options={{
+                tabBarIcon: ({ tintColor, focused }) => (
+                  <MaterialCommunityIcons
+                    name={focused ? "basket" : "basket-outline"}
+                    color={tintColor}
+                    size={30}
+                  />
+                )
+              }} 
+        />
+        <stack.Screen name="Listelerim" component={tab4} 
+              options={{
+                tabBarIcon: ({ tintColor, focused }) => (
+                  <MaterialCommunityIcons
+                    name={focused ? "heart" : "heart-outline"}
+                    color={tintColor}
+                    size={30}
+                  />
+                )
+              }} 
+        />
+        <stack.Screen name="Hesabım" component={tab5} 
+              options={{
+                tabBarIcon: ({ tintColor, focused }) => (
+                  <MaterialCommunityIcons
+                    name={focused ? "account-box" : "account-box-outline"}
+                    color={tintColor}
+                    size={30}
+                  />
+                )
+              }} 
+        />
       </Tab.Navigator>
     </NavigationContainer>
   );
