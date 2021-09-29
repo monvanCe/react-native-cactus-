@@ -27,8 +27,9 @@ export default function App() {
   return (
     <NavigationContainer>
       <Tab.Navigator
+             
             screenOptions={{
-              tabBarStyle: {  height: 60, },
+              tabBarStyle: {  height: 50, marginBottom:0,borderRadius:0,margin:0 ,position:'absolute'},
               tabBarActiveTintColor: '#000',
               tabBarInactiveTintColor: '#000',
             }}

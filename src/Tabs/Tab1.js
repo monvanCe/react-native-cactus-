@@ -1,18 +1,29 @@
 import * as React from 'react'
-import {Platform, StyleSheet, Text, View, TouchableOpacity, Button} from 'react-native'
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { Appbar } from 'react-native-paper';
+import { StyleSheet } from 'react-native';
 
-import {tab2} from './Tab2'
-import {tab3} from './Tab3'
+export const tab1 = () => (
+ <Appbar style={styles.bottom}>
+   <Appbar.Action
+     icon="archive"
+     onPress={() => console.log('Pressed archive')}
+    />
+    <Appbar.Action icon="mail" onPress={() => console.log('Pressed mail')} />
+    <Appbar.Action icon="label" onPress={() => console.log('Pressed label')} />
+    <Appbar.Action
+      icon="delete"
+      onPress={() => console.log('Pressed delete')}
+    />
+  </Appbar>
+ );
 
-export function tab1() {
-    return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>Ana sayfa</Text>
-      </View>
-    );
-  }
-  const Tab = createBottomTabNavigator();
-  const stack = createNativeStackNavigator();
+export default tab1
+
+const styles = StyleSheet.create({
+  bottom: {
+    position: 'absolute',
+    left: 0,
+    right: 0,
+    bottom: 600,
+  },
+});
